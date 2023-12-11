@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 1.5em;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 0.8em 1.5em;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 1em;
+        }
+
+        .gallery img {
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 1em;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        form {
+            margin-top: 2em;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 0.8em 1.5em;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Portfolio van Conrad Amatdjimirin</h1>
+    </header>
+
+    <section>
+        <h2>Over mij</h2>
+        <p>
+           Mijn naam is Conrad ik ben een energieke, 
+        </p>
+    </section>
+
+    <section>
+        <h2>Portfolio</h2>
+        <p id="lineup-text">
+        Klik hieronder om mijn projecten te bekijken.
+        </p>
+        <ul id="lineup" style="display: none;">
+            <!-- Dynamisch gegenereerde line-up komt hier -->
+        </ul>
+        <script>
+            // JavaScript voor het dynamisch weergeven van de line-up
+            function showLineup() {
+                var lineupText = document.getElementById("lineup-text");
+                var lineupList = document.getElementById("lineup");
+
+                // Simuleer een dynamische lijst met artiesten
+                var artists = ["DJ 1", "DJ 2", "Artiest 3", "Artiest 4"];
+
+                // Vul de lijst met artiesten
+                lineupList.innerHTML = "";
+                artists.forEach(function(artist) {
+                    var listItem = document.createElement("li");
+                    listItem.textContent = artist;
+                    lineupList.appendChild(listItem);
+                });
+
+                // Toon de lijst en update de tekst met overgangseffect
+                lineupList.style.display = "block";
+                lineupText.innerHTML = "<strong>Line-up:</strong>";
+            }
+        </script>
+        <button onclick="showLineup()">Bekijk Line-up</button>
+    </section>
+
+    <section>
+        <h2>Fotogalerij</h2>
+        <div class="gallery">
+            <!-- Voeg hier de foto's van het festival toe -->
+            <img src="image1.jpg" alt="Festival foto 1">
+            <img src="image2.jpg" alt="Festival foto 2">
+            <img src="image3.jpg" alt="Festival foto 3">
+        </div>
+    </section>
+
+    <section>
+        <h2></h2>
+        <p>
+            
+        </p>
+    </section>
+
+    <section>
+        <h2></h2>
+        <p>
+           
+        </p>
+        <!-- Voeg hier informatie toe over het kopen van tickets -->
+    </section>
+
+    <section>
+        <h2>Contact</h2>
+        <p>
+            Heb je vragen of wil je meer informatie? Neem contact met ons op via het onderstaande formulier.
+        </p>
+        <form>
+            <label for="naam">Naam:</label>
+            <input type="text" id="naam" name="naam" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="bericht">Bericht:</label>
+            <textarea id="bericht" name="bericht" rows="4" required></textarea>
+
+            <button type="submit">Verstuur</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 House Festival. Alle rechten voorbehouden.</p>
+    </footer>
+</body>
+</html>
